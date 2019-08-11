@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("Date", SimpleDate.DateTime.toDateTimeStandard(Date()))
+        //Log.d("Date", SimpleDate.DateTime.toDateTimeStandard(Date()))
     }
 }

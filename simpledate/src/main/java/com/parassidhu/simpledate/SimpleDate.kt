@@ -6,6 +6,14 @@ import java.util.*
 fun main() {
     println(SimpleDate.DateTime.toStandardWithDay(Date()))
     println(SimpleDate.DateTime.toStandardWithoutDay(Date()))
+    println(SimpleDate.DateTime.toDateTimeAndMonthInDigits(Date()))
+
+    println(SimpleDate.Time.toStandardTime(Date()))
+    println(SimpleDate.Time.toStandardTimeIn12Hours(Date()))
+
+    println(SimpleDate.Time.toStandardTimeWithoutSeconds(Date()))
+    println(SimpleDate.Time.toStandardTimeIn12HoursWithoutSeconds(Date()))
+
 }
 
 object SimpleDate {
@@ -28,6 +36,42 @@ object SimpleDate {
             return dateAsString(date)
         }
 
+        fun toDateTimeAndMonthInDigits(date: Date?): String {
+            val pattern = "dd-MM-yyyy HH:mm:ss"
+            simpleDateFormat = SimpleDateFormat(pattern)
+
+            return dateAsString(date)
+        }
+    }
+
+    object Time {
+        fun toStandardTime(date: Date?): String {
+            val pattern = "HH:mm:ss"
+            simpleDateFormat = SimpleDateFormat(pattern)
+
+            return dateAsString(date)
+        }
+
+        fun toStandardTimeWithoutSeconds(date: Date?): String {
+            val pattern = "HH:mm"
+            simpleDateFormat = SimpleDateFormat(pattern)
+
+            return dateAsString(date)
+        }
+
+        fun toStandardTimeIn12Hours(date: Date?): String {
+            val pattern = "h:mm:ss"
+            simpleDateFormat = SimpleDateFormat(pattern)
+
+            return dateAsString(date)
+        }
+
+        fun toStandardTimeIn12HoursWithoutSeconds(date: Date?): String {
+            val pattern = "h:mm"
+            simpleDateFormat = SimpleDateFormat(pattern)
+
+            return dateAsString(date)
+        }
     }
 
     private fun dateAsString(date: Date?): String {
