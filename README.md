@@ -4,9 +4,27 @@ SimpleDate is a Kotlin Library which helps you format the date as per your requi
 ### **Star :star:  this repo to show your support and it really does matter!** :clap:
  
 ## Getting Started
-Just add the following line into `build.gradle` app-level module:
 
-```implementation xyz```
+In project-level `build.gradle`:
+
+```
+allprojects {
+ repositories {
+   ...
+   maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+In app-level `build.gradle`: [![](https://jitpack.io/v/sidhuparas/SimpleDate.svg)](https://jitpack.io/#sidhuparas/SimpleDate)
+
+``` 
+dependencies {
+	 implementation 'com.github.sidhuparas:SimpleDate:<latest-version>'
+  }
+```
+
+## Usage
 
 As an input, you only need a Date object. Following are the available functions:
 
