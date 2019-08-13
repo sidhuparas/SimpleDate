@@ -20,3 +20,6 @@ buildscript {
 repositories {
     mavenCentral()
 }
+
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.sidhuparas'
