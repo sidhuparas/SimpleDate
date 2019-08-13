@@ -3,9 +3,9 @@ package com.parassidhu.simpledate
 import java.text.SimpleDateFormat
 import java.util.*
 
+/*
 fun main() {
     val date = Date()
-
     println(SimpleDate.DateTime.toStandard(date))
     println(SimpleDate.DateTime.toStandardIn12Hours(date))
     println(SimpleDate.DateTime.toStandardInDigits(date))
@@ -33,6 +33,7 @@ fun main() {
     println("-----------------------------------------")
     println(SimpleDate.Day.toDay(date))
 }
+*/
 
 object SimpleDate {
 
