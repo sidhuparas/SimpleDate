@@ -22,4 +22,4 @@ repositories {
 }
 
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.sidhuparas'
+group='com.parassidhu'
