@@ -3,8 +3,7 @@ package com.parassidhu.simpledate
 import java.text.SimpleDateFormat
 import java.util.*
 
-/*
-fun main() {
+/*fun main() {
     val date = Date()
     println(SimpleDate.DateTime.toStandard(date))
     println(SimpleDate.DateTime.toStandardIn12Hours(date))
@@ -32,8 +31,7 @@ fun main() {
     println(SimpleDate.Date.toYYInDigits(date))
     println("-----------------------------------------")
     println(SimpleDate.Day.toDay(date))
-}
-*/
+}*/
 
 object SimpleDate {
 
@@ -42,12 +40,12 @@ object SimpleDate {
     object DateTime {
 
         fun toStandard(date: java.util.Date?): String {
-            val pattern = "dd MMMMM yyyy HH:mm:ss"
+            val pattern = "dd MMMM yyyy HH:mm:ss"
             return dateAsString(date, pattern)
         }
 
         fun toStandardIn12Hours(date: java.util.Date?): String {
-            val pattern = "dd MMMMM yyyy h:mm:ss a"
+            val pattern = "dd MMMM yyyy h:mm:ss a"
             return dateAsString(date, pattern)
         }
 
@@ -72,12 +70,12 @@ object SimpleDate {
         }
 
         fun toYY(date: java.util.Date?): String {
-            val pattern = "dd MMMMM yy HH:mm:ss"
+            val pattern = "dd MMMM yy HH:mm:ss"
             return dateAsString(date, pattern)
         }
 
         fun toYYIn12Hours(date: java.util.Date?): String {
-            val pattern = "dd MMMMM yy h:mm:ss a"
+            val pattern = "dd MMMM yy h:mm:ss a"
             return dateAsString(date, pattern)
         }
 
@@ -126,7 +124,7 @@ object SimpleDate {
 
     object Date {
         fun toStandard(date: java.util.Date?): String {
-            val pattern = "dd MMMMM YYYY"
+            val pattern = "dd MMMM YYYY"
             return dateAsString(date, pattern)
         }
 
@@ -141,7 +139,7 @@ object SimpleDate {
         }
 
         fun toYY(date: java.util.Date?): String {
-            val pattern = "dd MMMMM yy"
+            val pattern = "dd MMMM yy"
             return dateAsString(date, pattern)
         }
 

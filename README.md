@@ -50,4 +50,6 @@ SimpleDate.Day.toDay(date)                    // Tuesday
 
 - Fork the repo
 - Create a new branch and make changes
-- Push the code to the branch and make a PR! :thumbsup: 
+- Push the code to the branch and make a PR! :thumbsup:
+
+Special thanks to <a href="https://github.com/amy6">Mahima</a> for testing out the early version and helping in bug fix :clap:
