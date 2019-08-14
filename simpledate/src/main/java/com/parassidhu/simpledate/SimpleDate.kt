@@ -156,7 +156,7 @@ object SimpleDate {
 
     object Day {
         fun toDay(date: java.util.Date?): String {
-            val pattern = "EEEEE"
+            val pattern = "EEEE"
             return dateAsString(date, pattern)
         }
     }

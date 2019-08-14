@@ -1,6 +1,8 @@
 # Introduction [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/sidhuparas)  [![License](https://img.shields.io/badge/license-MIT-orange.svg)](https://github.com/sidhuparas/SimpleDate/blob/master/LICENSE)
 SimpleDate is a Kotlin Library which helps you format the date as per your requirement.
 
+<img src="poster.jpeg">
+
 ### **Star :star:  this repo to show your support and it really does matter!** :clap:
  
 ## Getting Started
@@ -20,8 +22,8 @@ In app-level `build.gradle`: [![](https://jitpack.io/v/sidhuparas/SimpleDate.svg
 
 ```
 dependencies {
-	 implementation 'com.github.sidhuparas:SimpleDate:<latest-version>'
-  }
+     implementation 'com.github.sidhuparas:SimpleDate:<latest-version>'
+}
 ```
 
 ## Usage
