@@ -5,36 +5,36 @@ import java.util.*
 
 private lateinit var simpleDateFormat: SimpleDateFormat
 
-fun main() {
+/*fun main() {
     val date = Date()
 
-    /*println(SimpleDate.DateTime.toStandard(date))
-    println(SimpleDate.DateTime.toStandardIn12Hours(date))
-    println(SimpleDate.DateTime.toStandardInDigits(date))
-    println(SimpleDate.DateTime.toStandardInDigitsAnd12Hours(date))
-    println(SimpleDate.DateTime.toStandardConcise(date))
-    println(SimpleDate.DateTime.toStandardConciseIn12Hours(date))
-    println(SimpleDate.DateTime.toYY(date))
-    println(SimpleDate.DateTime.toYYIn12Hours(date))
-    println(SimpleDate.DateTime.toYYInDigits(date))
-    println(SimpleDate.DateTime.toYYInDigitsAnd12Hours(date))
-    println(SimpleDate.DateTime.toYYConcise(date))
-    println(SimpleDate.DateTime.toYYConciseIn12Hours(date))
+    println(date.toDateTimeStandard())
+    println(date.toDateTimeStandardIn12Hours())
+    println(date.toDateTimeStandardInDigits())
+    println(date.toDateTimeStandardInDigitsAnd12Hours())
+    println(date.toDateTimeStandardConcise())
+    println(date.toDateTimeStandardConciseIn12Hours())
+    println(date.toDateTimeYY())
+    println(date.toDateTimeYYIn12Hours())
+    println(date.toDateTimeYYInDigits())
+    println(date.toDateTimeYYInDigitsAnd12Hours())
+    println(date.toDateTimeYYConcise())
+    println(date.toDateTimeYYConciseIn12Hours())
     println("-----------------------------------------")
-    println(SimpleDate.Time.toStandard(date))
-    println(SimpleDate.Time.toStandardWithoutSeconds(date))
-    println(SimpleDate.Time.toStandardIn12Hours(date))
-    println(SimpleDate.Time.toStandardIn12HoursWithoutSeconds(date))
+    println(date.toTimeStandard())
+    println(date.toTimeStandardWithoutSeconds())
+    println(date.toTimeStandardIn12Hours())
+    println(date.toTimeStandardIn12HoursWithoutSeconds())
     println("-----------------------------------------")
-    println(SimpleDate.Date.toStandard(date))
-    println(SimpleDate.Date.toStandardConcise(date))
-    println(SimpleDate.Date.toStandardInDigits(date))
-    println(SimpleDate.Date.toYY(date))
-    println(SimpleDate.Date.toYYConcise(date))
-    println(SimpleDate.Date.toYYInDigits(date))
+    println(date.toDateStandard())
+    println(date.toDateStandardConcise())
+    println(date.toDateStandardInDigits())
+    println(date.toDateYY())
+    println(date.toDateYYConcise())
+    println(date.toDateYYInDigits())
     println("-----------------------------------------")
-    println(SimpleDate.Day.toDay(date))*/
-}
+    println(date.toDay())
+}*/
 
 // -------------------------- DateTime --------------------------
 
@@ -155,9 +155,9 @@ fun Date?.toDateYYInDigits(): String {
 
 // -------------------------- Day --------------------------
 
-fun toDay(date: Date?): String {
+fun Date?.toDay(): String {
     val pattern = "EEEE"
-    return dateAsString(date, pattern)
+    return dateAsString(this, pattern)
 }
 // ---------------------------------------------------------
 

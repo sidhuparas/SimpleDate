@@ -26,44 +26,65 @@ dependencies {
 }
 ```
 
+## Version 2.0+ Backward Incompatible
+
+`SimpleDate` uses Kotlin Extension Functions since Version 2.0. This makes it incompatible with the older versions of the library. But thanks to extension functions, the API looks very clean on Kotlin as well as Java. 
+
 ## Usage
 
-As an input, you only need a Date object. Following are the available functions:
+You can use the methods on a date object. Following are the available functions:
 
+### For Date and Time
 ```kotlin
-SimpleDate.DateTime                                 
-                    .toStandard(date)               // 13 August 2019 21:55:11
-                    .toStandardIn12Hours(date)      // 13 August 2019 9:55:11 PM
-                    .toStandardInDigits(date)       // 13-08-2019 21:55:11
-                    .toStandardInDigitsAnd12Hours(date)     // 13-08-2019 9:55:11 PM
-                    .toStandardConcise(date)                // 13 Aug 2019 21:55:11
-                    .toStandardConciseIn12Hours(date)       // 13 Aug 2019 9:55:11 PM
-                    .toYY(date)                     // 13 August 19 21:55:11
-                    .toYYIn12Hours(date)            // 13 August 19 9:55:11 PM
-                    .toYYInDigits(date)             // 13-08-19 21:55:11
-                    .toYYInDigitsAnd12Hours(date)   // 13-08-19 9:55:11 PM
-                    .toYYConcise(date)              // 13 Aug 19 21:55:11
-                    .toYYConciseIn12Hours(date)     // 13 Aug 19 9:55:11 PM
+date                                 
+     .toDateTimeStandard()               // 13 August 2019 21:55:11
+     .toDateTimeStandardIn12Hours()      // 13 August 2019 9:55:11 PM
+     .toDateTimeStandardInDigits()       // 13-08-2019 21:55:11
+     .toDateTimeStandardInDigitsAnd12Hours()     // 13-08-2019 9:55:11 PM
+     .toDateTimeStandardConcise()                // 13 Aug 2019 21:55:11
+     .toDateTimeStandardConciseIn12Hours()       // 13 Aug 2019 9:55:11 PM
+     .toDateTimeYY()                     // 13 August 19 21:55:11
+     .toDateTimeYYIn12Hours()            // 13 August 19 9:55:11 PM
+     .toDateTimeYYInDigits()             // 13-08-19 21:55:11
+     .toDateTimeYYInDigitsAnd12Hours()   // 13-08-19 9:55:11 PM
+     .toDateTimeYYConcise()              // 13 Aug 19 21:55:11
+     .toDateTimeYYConciseIn12Hours()     // 13 Aug 19 9:55:11 PM
                     
 ```
+### For Time Only
 ```kotlin
-SimpleDate.Time
-                    .toStandard(date)                           // 21:55:11
-                    .toStandardWithoutSeconds(date)             // 21:55
-                    .toStandardIn12Hours(date)                  // 9:55:11 PM
-                    .toStandardIn12HoursWithoutSeconds(date)    // 9:55 PM
+date
+     .toTimeStandard()                           // 21:55:11
+     .toTimeStandardWithoutSeconds()             // 21:55
+     .toTimeStandardIn12Hours()                  // 9:55:11 PM
+     .toTimeStandardIn12HoursWithoutSeconds()    // 9:55 PM
 ```
+### For Date Only
 ```kotlin
-SimpleDate.Date
-                    .toStandard(date)               // 13 August 2019
-                    .toStandardConcise(date)        // 13 Aug 2019
-                    .toStandardInDigits(date)       // 13-08-2019
-                    .toYY(date)                     // 13 August 19
-                    .toYYConcise(date)              // 13 Aug 19
-                    .toYYInDigits(date)             // 13-08-19
+date
+      .toDateStandard()               // 13 August 2019
+      .toDateStandardConcise()        // 13 Aug 2019
+      .toDateStandardInDigits()       // 13-08-2019
+      .toDateYY()                     // 13 August 19
+      .toDateYYConcise()              // 13 Aug 19
+      .toDateYYInDigits()             // 13-08-19
 ```
+### For Day Only
 ```kotlin
-SimpleDate.Day.toDay(date)                    // Tuesday
+date.toDay()                    // Tuesday
+```
+
+## Examples
+
+- <b>Kotlin</b>:
+```kotlin
+   val date = Date()
+   println(date.toDateTimeStandard())
+```
+- <b>Java</b>:
+```java
+    Date date = new Date();
+    System.out.println(SimpleDateKt.toDateTimeStandard(date));
 ```
 
 ## Contributions
@@ -72,4 +93,6 @@ SimpleDate.Day.toDay(date)                    // Tuesday
 - Create a new branch and make changes
 - Push the code to the branch and make a PR! :thumbsup:
 
-Special thanks to <a href="https://github.com/amy6">Mahima</a> for testing out the early version and helping in bug fix :clap:
+## Special Thanks
+- to <a href="https://github.com/amy6">Mahima</a> for testing out the early version and helping in bug fix :clap:
+- to <a href="https://github.com/xsahil03x">Sahil</a> for suggesting the use of Kotlin Extension Functions :heart: 
