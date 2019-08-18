@@ -3,9 +3,12 @@ package com.parassidhu.simpledate
 import java.text.SimpleDateFormat
 import java.util.*
 
-/*fun main() {
+private lateinit var simpleDateFormat: SimpleDateFormat
+
+fun main() {
     val date = Date()
-    println(SimpleDate.DateTime.toStandard(date))
+
+    /*println(SimpleDate.DateTime.toStandard(date))
     println(SimpleDate.DateTime.toStandardIn12Hours(date))
     println(SimpleDate.DateTime.toStandardInDigits(date))
     println(SimpleDate.DateTime.toStandardInDigitsAnd12Hours(date))
@@ -30,142 +33,138 @@ import java.util.*
     println(SimpleDate.Date.toYYConcise(date))
     println(SimpleDate.Date.toYYInDigits(date))
     println("-----------------------------------------")
-    println(SimpleDate.Day.toDay(date))
-}*/
+    println(SimpleDate.Day.toDay(date))*/
+}
 
-object SimpleDate {
+// -------------------------- DateTime --------------------------
 
-    private lateinit var simpleDateFormat: SimpleDateFormat
+fun Date?.toDateTimeStandard(): String {
+    val pattern = "dd MMMM yyyy HH:mm:ss"
 
-    object DateTime {
+    return dateAsString(this, pattern)
+}
 
-        fun toStandard(date: java.util.Date?): String {
-            val pattern = "dd MMMM yyyy HH:mm:ss"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeStandardIn12Hours(): String {
+    val pattern = "dd MMMM yyyy h:mm:ss a"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardIn12Hours(date: java.util.Date?): String {
-            val pattern = "dd MMMM yyyy h:mm:ss a"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeStandardInDigits(): String {
+    val pattern = "dd-MM-yyyy HH:mm:ss"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardInDigits(date: java.util.Date?): String {
-            val pattern = "dd-MM-yyyy HH:mm:ss"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeStandardInDigitsAnd12Hours(): String {
+    val pattern = "dd-MM-yyyy h:mm:ss a"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardInDigitsAnd12Hours(date: java.util.Date?): String {
-            val pattern = "dd-MM-yyyy h:mm:ss a"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeStandardConcise(): String {
+    val pattern = "dd MMM yyyy HH:mm:ss"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardConcise(date: java.util.Date?): String {
-            val pattern = "dd MMM yyyy HH:mm:ss"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeStandardConciseIn12Hours(): String {
+    val pattern = "dd MMM yyyy h:mm:ss a"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardConciseIn12Hours(date: java.util.Date?): String {
-            val pattern = "dd MMM yyyy h:mm:ss a"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeYY(): String {
+    val pattern = "dd MMMM yy HH:mm:ss"
+    return dateAsString(this, pattern)
+}
 
-        fun toYY(date: java.util.Date?): String {
-            val pattern = "dd MMMM yy HH:mm:ss"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeYYIn12Hours(): String {
+    val pattern = "dd MMMM yy h:mm:ss a"
+    return dateAsString(this, pattern)
+}
 
-        fun toYYIn12Hours(date: java.util.Date?): String {
-            val pattern = "dd MMMM yy h:mm:ss a"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeYYInDigits(): String {
+    val pattern = "dd-MM-yy HH:mm:ss"
+    return dateAsString(this, pattern)
+}
 
-        fun toYYInDigits(date: java.util.Date?): String {
-            val pattern = "dd-MM-yy HH:mm:ss"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeYYInDigitsAnd12Hours(): String {
+    val pattern = "dd-MM-yy h:mm:ss a"
+    return dateAsString(this, pattern)
+}
 
-        fun toYYInDigitsAnd12Hours(date: java.util.Date?): String {
-            val pattern = "dd-MM-yy h:mm:ss a"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeYYConcise(): String {
+    val pattern = "dd MMM yy HH:mm:ss"
+    return dateAsString(this, pattern)
+}
 
-        fun toYYConcise(date: java.util.Date?): String {
-            val pattern = "dd MMM yy HH:mm:ss"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateTimeYYConciseIn12Hours(): String {
+    val pattern = "dd MMM yy h:mm:ss a"
+    return dateAsString(this, pattern)
+}
 
-        fun toYYConciseIn12Hours(date: java.util.Date?): String {
-            val pattern = "dd MMM yy h:mm:ss a"
-            return dateAsString(date, pattern)
-        }
-    }
+// -------------------------- Time --------------------------
 
-    object Time {
-        fun toStandard(date: java.util.Date?): String {
-            val pattern = "HH:mm:ss"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toTimeStandard(): String {
+    val pattern = "HH:mm:ss"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardWithoutSeconds(date: java.util.Date?): String {
-            val pattern = "HH:mm"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toTimeStandardWithoutSeconds(): String {
+    val pattern = "HH:mm"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardIn12Hours(date: java.util.Date?): String {
-            val pattern = "h:mm:ss a"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toTimeStandardIn12Hours(): String {
+    val pattern = "h:mm:ss a"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardIn12HoursWithoutSeconds(date: java.util.Date?): String {
-            val pattern = "h:mm a"
-            return dateAsString(date, pattern)
-        }
-    }
+fun Date?.toTimeStandardIn12HoursWithoutSeconds(): String {
+    val pattern = "h:mm a"
+    return dateAsString(this, pattern)
+}
 
-    object Date {
-        fun toStandard(date: java.util.Date?): String {
-            val pattern = "dd MMMM YYYY"
-            return dateAsString(date, pattern)
-        }
+// -------------------------- Date --------------------------
 
-        fun toStandardConcise(date: java.util.Date?): String {
-            val pattern = "dd MMM yyyy"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateStandard(): String {
+    val pattern = "dd MMMM YYYY"
+    return dateAsString(this, pattern)
+}
 
-        fun toStandardInDigits(date: java.util.Date?): String {
-            val pattern = "dd-MM-yyyy"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateStandardConcise(): String {
+    val pattern = "dd MMM yyyy"
+    return dateAsString(this, pattern)
+}
 
-        fun toYY(date: java.util.Date?): String {
-            val pattern = "dd MMMM yy"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateStandardInDigits(): String {
+    val pattern = "dd-MM-yyyy"
+    return dateAsString(this, pattern)
+}
 
-        fun toYYConcise(date: java.util.Date?): String {
-            val pattern = "dd MMM yy"
-            return dateAsString(date, pattern)
-        }
+fun Date?.toDateYY(): String {
+    val pattern = "dd MMMM yy"
+    return dateAsString(this, pattern)
+}
 
-        fun toYYInDigits(date: java.util.Date?): String {
-            val pattern = "dd-MM-yy"
-            return dateAsString(date, pattern)
-        }
-    }
+fun Date?.toDateYYConcise(): String {
+    val pattern = "dd MMM yy"
+    return dateAsString(this, pattern)
+}
 
-    object Day {
-        fun toDay(date: java.util.Date?): String {
-            val pattern = "EEEE"
-            return dateAsString(date, pattern)
-        }
-    }
+fun Date?.toDateYYInDigits(): String {
+    val pattern = "dd-MM-yy"
+    return dateAsString(this, pattern)
+}
 
-    private fun dateAsString(date: java.util.Date?, pattern: String): String {
-        simpleDateFormat = SimpleDateFormat(pattern, Locale.getDefault())
-        if (date != null)
-            return simpleDateFormat.format(date)
-        else
-            throw NullPointerException("Date can't be null")
-    }
+// -------------------------- Day --------------------------
+
+fun toDay(date: Date?): String {
+    val pattern = "EEEE"
+    return dateAsString(date, pattern)
+}
+// ---------------------------------------------------------
+
+private fun dateAsString(date: Date?, pattern: String): String {
+    simpleDateFormat = SimpleDateFormat(pattern, Locale.getDefault())
+    if (date != null)
+        return simpleDateFormat.format(date)
+    else
+        throw NullPointerException("Date can't be null")
 }
