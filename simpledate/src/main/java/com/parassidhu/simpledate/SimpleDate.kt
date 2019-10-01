@@ -32,6 +32,9 @@ private lateinit var simpleDateFormat: SimpleDateFormat
     println(date.toDateYY())
     println(date.toDateYYConcise())
     println(date.toDateYYInDigits())
+    println(date.toDateYMD())
+    println(date.toDateYMDConcise())
+    println(date.toDateYMDInDigits())
     println("-----------------------------------------")
     println(date.toDay())
 }*/
@@ -150,6 +153,21 @@ fun Date?.toDateYYConcise(): String {
 
 fun Date?.toDateYYInDigits(): String {
     val pattern = "dd-MM-yy"
+    return dateAsString(this, pattern)
+}
+
+fun Date?.toDateYMD(): String {
+    val pattern = "yyyy MMMM dd"
+    return dateAsString(this, pattern)
+}
+
+fun Date?.toDateYMDConcise(): String {
+    val pattern = "yyyy MMM dd"
+    return dateAsString(this, pattern)
+}
+
+fun Date?.toDateYMDInDigits(): String {
+    val pattern = "yyyy-MM-dd"
     return dateAsString(this, pattern)
 }
 
