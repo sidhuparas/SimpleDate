@@ -68,6 +68,9 @@ date
       .toDateYY()                     // 13 August 19
       .toDateYYConcise()              // 13 Aug 19
       .toDateYYInDigits()             // 13-08-19
+      .toDateYMD()                    // 2019 August 13
+      .toDateYMDConcise()             // 2019 Aug 13
+      .toDateYMDInDigits()            // 2019-08-13
 ```
 ### For Day Only
 ```kotlin
