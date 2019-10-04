@@ -83,11 +83,6 @@ fun Date?.toCompleteDate(): String {
     return dateAsString(this, pattern)
 }
 
-fun Date?.toCompleteDateTUC(): String {
-    val pattern = "yyyy-MM-dd'T'HH:mm:ss"
-    return dateAsString(this, pattern)
-}
-
 fun Date?.toDateTimeYY(): String {
     val pattern = "dd MMMM yy HH:mm:ss"
     return dateAsString(this, pattern)
