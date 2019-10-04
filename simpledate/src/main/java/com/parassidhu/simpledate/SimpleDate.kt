@@ -14,8 +14,6 @@ private lateinit var simpleDateFormat: SimpleDateFormat
     println(date.toDateTimeStandardInDigitsAnd12Hours())
     println(date.toDateTimeStandardConcise())
     println(date.toDateTimeStandardConciseIn12Hours())
-    println(date.toCompleteDate())
-    println(date.toCompleteDateTUC())
     println(date.toDateTimeYY())
     println(date.toDateTimeYYIn12Hours())
     println(date.toDateTimeYYInDigits())
@@ -75,11 +73,6 @@ fun Date?.toDateTimeStandardConcise(): String {
 
 fun Date?.toDateTimeStandardConciseIn12Hours(): String {
     val pattern = "dd MMM yyyy h:mm:ss a"
-    return dateAsString(this, pattern)
-}
-
-fun Date?.toCompleteDate(): String {
-    val pattern = "yyyy-MM-dd'T'HH:mm:ss"
     return dateAsString(this, pattern)
 }
 
