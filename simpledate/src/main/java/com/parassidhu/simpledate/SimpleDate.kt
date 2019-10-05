@@ -20,6 +20,7 @@ private lateinit var simpleDateFormat: SimpleDateFormat
     println(date.toDateTimeYYInDigitsAnd12Hours())
     println(date.toDateTimeYYConcise())
     println(date.toDateTimeYYConciseIn12Hours())
+    println(date.toZuluFormat())
     println("-----------------------------------------")
     println(date.toTimeStandard())
     println(date.toTimeStandardWithoutSeconds())
@@ -35,6 +36,9 @@ private lateinit var simpleDateFormat: SimpleDateFormat
     println(date.toDateYMD())
     println(date.toDateYMDConcise())
     println(date.toDateYMDInDigits())
+    println(date.toDateEMd())
+    println(date.toDateEMYShort())
+    println(date.toDateEMY())
     println("-----------------------------------------")
     println(date.toDay())
 }*/
@@ -102,6 +106,10 @@ fun Date?.toDateTimeYYConciseIn12Hours(): String {
     return dateAsString(this, pattern)
 }
 
+fun Date?.toZuluFormat(): String {
+    val pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    return dateAsString(this, pattern)
+}
 // -------------------------- Time --------------------------
 
 fun Date?.toTimeStandard(): String {
@@ -168,6 +176,21 @@ fun Date?.toDateYMDConcise(): String {
 
 fun Date?.toDateYMDInDigits(): String {
     val pattern = "yyyy-MM-dd"
+    return dateAsString(this, pattern)
+}
+
+fun Date?.toDateEMd(): String {
+    val pattern = "EEE, MMM dd"
+    return dateAsString(this, pattern)
+}
+
+fun Date?.toDateEMYShort(): String {
+    val pattern = "EEE, MMM YY"
+    return dateAsString(this, pattern)
+}
+
+fun Date?.toDateEMY(): String {
+    val pattern = "EEEE, MMMM YYYY"
     return dateAsString(this, pattern)
 }
 
