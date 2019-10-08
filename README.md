@@ -49,7 +49,7 @@ date
      .toDateTimeYYInDigitsAnd12Hours()   // 13-08-19 9:55:11 PM
      .toDateTimeYYConcise()              // 13 Aug 19 21:55:11
      .toDateTimeYYConciseIn12Hours()     // 13 Aug 19 9:55:11 PM
-                    
+     .toZuluFormat()                     // 2019-08-19T21:16:55:11.926Z                   
 ```
 ### For Time Only
 ```kotlin
@@ -71,6 +71,9 @@ date
       .toDateYMD()                    // 2019 August 13
       .toDateYMDConcise()             // 2019 Aug 13
       .toDateYMDInDigits()            // 2019-08-13
+      .toDateEMd()                    // Tue, Aug 13
+      .toDateEMYShort()               // Tue, Aug 19
+      .toDateEMY()                    // Tuesday, August 2019
 ```
 ### For Day Only
 ```kotlin
