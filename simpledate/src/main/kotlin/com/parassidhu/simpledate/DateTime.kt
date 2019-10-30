@@ -1,3 +1,6 @@
+@file:JvmMultifileClass
+@file:JvmName("SimpleDate")
+
 package com.parassidhu.simpledate
 
 import java.util.*

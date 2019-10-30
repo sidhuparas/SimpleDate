@@ -1,6 +1,10 @@
+@file:JvmMultifileClass
+@file:JvmName("SimpleDate")
+
 package com.parassidhu.simpledate
 
 import java.util.*
+
 
 fun Date?.toDateStandard(): String {
   val pattern = "dd MMMM YYYY"
